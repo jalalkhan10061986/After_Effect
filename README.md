@@ -143,4 +143,4 @@ Issues and pull requests are welcome. The project has no dependencies, so open `
 
 ## License
 
-No license has been chosen yet. Add a `LICENSE` file (for example MIT) to state how others may use this code.
+Released under the [MIT License](LICENSE). You are free to use, copy, modify and distribute this project, including for commercial work, as long as the copyright notice is kept.
