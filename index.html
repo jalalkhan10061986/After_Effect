@@ -1,0 +1,58 @@
+<!--
+Project Title   : After Effect
+Version         : 1.0.0
+Author          : Jalal Khan
+Company         : Eastern Solution
+Developed By    : Eastern Solution Team
+Project Type    : Web Application
+Technology      : JavaScript, HTML5, CSS3, JSON
+License         : Proprietary / Open Source
+Start Date      : Oct-10-2026
+Last Updated    : Oct-10-2026
+Collation       : utf8mb4_unicode_ci
+Status          : Active Development
+Client          : Internal / Customer / Individual / student
+Contact Email   : jalalkhan121@gmail.com
+
+Copyright       : © 2026 Eastern Solution. All Rights Reserved.
+--><!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>After Effect</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css"></head>
+<body>
+<header>
+ <div class="brand"><svg viewBox="0 0 24 24"><rect width="24" height="24" rx="6" fill="#8b7bff"/><path d="M7 17 12 6l5 11M9 13h6" stroke="#fff" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>After Effect</div>
+ <input type="text" id="pname" aria-label="Project name">
+ <button id="undo">Undo</button><button id="redo">Redo</button>
+ <span class="sp"></span>
+ <button id="bNew">New</button><button id="bJson">JSON</button><button id="bRender" class="pri">Render video</button><button id="bTheme">Theme</button>
+</header>
+<main>
+ <aside id="left">
+  <h4>Add layer</h4>
+  <div class="g2" id="adds"></div><h4>Media</h4><div class="g2"><button id="upPhoto" class="pri">Photo…</button><button id="upVideo" class="pri">Video…</button></div><p class="hint">You can also drop files on the preview or paste an image.</p><input type="file" id="fPhoto" accept="image/*" multiple hidden><input type="file" id="fVideo" accept="video/*" multiple hidden><input type="file" id="fRelink" accept="video/*" hidden>
+  <h4>Layer</h4>
+  <div class="g2"><button data-op="dup">Duplicate</button><button data-op="del">Delete</button><button data-op="up">Move up</button><button data-op="down">Move down</button></div>
+  <h4>Animation presets</h4>
+  <div class="g2" id="presets"></div>
+  <p class="empty" style="margin-top:12px">Presets start at the playhead. Press K to keyframe every property, Space to play.</p>
+ </aside>
+ <section id="view">
+  <div id="stage"><canvas id="cv" width="960" height="540"></canvas></div>
+  <div id="bar">
+   <button id="bStart" title="Go to start">|◀</button><button id="bPlay" class="pri" style="min-width:64px">Play</button><button id="bEnd" title="Go to end">▶|</button>
+   <span id="time"></span>
+   <label><input type="checkbox" id="loop" checked> Loop</label>
+   <label>Zoom <input type="range" id="zoom" min="0.5" max="3" step="0.1" value="1"></label>
+   <label>Length <input type="number" id="dur" min="1" max="30" step="1" style="width:56px">s</label>
+   <label>Background <input type="color" id="bg"></label>
+  </div>
+ </section>
+ <aside id="props"></aside>
+ <section id="tl" aria-label="Timeline"></section>
+</main>
+<dialog id="dlg"><h3 id="dt" style="margin-top:0"></h3><div id="db"></div><p style="text-align:right;margin-bottom:0"><button onclick="dlg.close()">Close</button></p></dialog>
+<script src="app.js"></script>
+</body></html>
